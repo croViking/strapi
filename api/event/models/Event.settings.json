@@ -1,0 +1,104 @@
+{
+  "connection": "default",
+  "collectionName": "events",
+  "info": {
+    "name": "event",
+    "description": "The Event content type, also known as a Hack or Hackathon"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "unique": true,
+      "minLength": 4,
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "event_start": {
+      "default": "",
+      "type": "date"
+    },
+    "event_end": {
+      "default": "",
+      "type": "date"
+    },
+    "application_deadline": {
+      "default": "",
+      "type": "date"
+    },
+    "short_description": {
+      "default": "",
+      "maxLength": 160,
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "poster": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "faq": {
+      "default": "",
+      "type": "text"
+    },
+    "how_to_apply": {
+      "default": "",
+      "type": "text"
+    },
+    "applications_closed": {
+      "default": false,
+      "type": "boolean"
+    },
+    "state": {
+      "enum": [
+        "Created",
+        "Published",
+        "Applications closed",
+        "Event",
+        "Closed",
+        "Archived"
+      ],
+      "default": "Created",
+      "type": "enumeration"
+    },
+    "created_by": {
+      "model": "user",
+      "via": "events",
+      "plugin": "users-permissions"
+    },
+    "created_at": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "last_modified_by": {
+      "model": "user",
+      "via": "events_modified",
+      "dominant": true,
+      "plugin": "users-permissions"
+    },
+    "last_modified_at": {
+      "default": "",
+      "type": "date"
+    },
+    "tracks": {
+      "collection": "challenge",
+      "via": "event"
+    }
+  }
+}

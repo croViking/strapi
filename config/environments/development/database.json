@@ -1,0 +1,28 @@
+{
+  "defaultConnection": "Maria",
+  "connections": {
+    "default": {
+      "settings": {
+        "client": "postgres",
+        "host": "strapi-dev.cgosmraxobic.eu-west-1.rds.amazonaws.com",
+        "port": "5432",
+        "database": "strapi",
+        "username": "croviking_strapi_dev",
+        "password": "cr0V1k1ng01strapidev"
+      },
+      "options": {},
+      "connector": "strapi-hook-bookshelf"
+    },
+    "Maria": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "mysql",
+        "host": "strapi.cgosmraxobic.eu-west-1.rds.amazonaws.com",
+        "port": 3306,
+        "database": "strapi",
+        "username": "strapi_dev",
+        "password": "ultrahackmariaofmysoul1928"
+      }
+    }
+  }
+}

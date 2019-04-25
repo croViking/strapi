@@ -1,0 +1,62 @@
+{
+  "connection": "default",
+  "collectionName": "challenges",
+  "info": {
+    "name": "challenge",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "infographic": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "poster": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "short_description": {
+      "default": "",
+      "type": "text"
+    },
+    "background_information": {
+      "default": "",
+      "type": "text"
+    },
+    "sulution_domains": {
+      "default": "",
+      "type": "text"
+    },
+    "constraints": {
+      "default": "",
+      "type": "text"
+    },
+    "resources": {
+      "default": "",
+      "type": "text"
+    },
+    "event": {
+      "model": "event",
+      "via": "tracks"
+    }
+  }
+}

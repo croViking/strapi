@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "messages",
+  "info": {
+    "name": "message",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "from": {
+      "default": "",
+      "type": "string"
+    },
+    "to": {
+      "default": "",
+      "type": "string"
+    },
+    "subject": {
+      "default": "",
+      "type": "string"
+    },
+    "message": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "connection": "default",
+  "collectionName": "pages",
+  "info": {
+    "name": "page",
+    "description": "A web page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "minLength": 1,
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "keywords": {
+      "default": "",
+      "type": "string"
+    },
+    "published": {
+      "default": false,
+      "type": "boolean",
+      "required": true
+    },
+    "autopublish": {
+      "default": "",
+      "type": "date"
+    },
+    "main-heading": {
+      "default": "",
+      "type": "string"
+    },
+    "article": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "desktop-image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
